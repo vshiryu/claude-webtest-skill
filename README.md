@@ -1,4 +1,6 @@
-# webtest — Claude Code skill
+# webtest
+
+**English** · [Português](README.pt-BR.md)
 
 Browser-based **feature testing** for your own web apps (Next.js, Laravel, etc.), as a
 [Claude Code](https://claude.ai/code) skill. It drives a real Chrome through the DevTools
@@ -10,14 +12,14 @@ It catches the bugs a quick visual check misses: a page that *renders* fine but 
 the console, fails a request, or whose client JS never loads.
 
 <p align="center">
-  <img src="docs/demo.png" alt="webtest run: asserts pass but a hidden JS error is caught — VERDICT FAIL" width="760">
+  <img src="docs/demo.png" alt="webtest run: asserts pass but a hidden JS error is caught, VERDICT FAIL" width="760">
 </p>
 
 ## Why it's different from "just open a browser"
 
 A persistent **monitor** stays attached to Chrome the whole session and records every
-console error/warning, uncaught exception, failed request, and HTTP ≥ 400. Assertions plus
-that event feed give you a real verdict — not just a screenshot that *looks* okay.
+console error/warning, uncaught exception, failed request, and HTTP >= 400. Assertions plus
+that event feed give you a real verdict, not just a screenshot that *looks* okay.
 
 ## Requirements
 
@@ -71,10 +73,10 @@ bash "$WT" report                             # -> VERDICT: PASS / FAIL
 
 ## How it works
 
-- `webtest.sh` — lifecycle (Chrome + monitor) + CLI wrapper.
-- `drive.mjs` — `puppeteer-core` driver; connects to Chrome over CDP and **never closes it**,
+- `webtest.sh`: lifecycle (Chrome + monitor) + CLI wrapper.
+- `drive.mjs`: `puppeteer-core` driver; connects to Chrome over CDP and **never closes it**,
   so the session (cookies, tabs, page state) persists between commands.
-- `monitor.mjs` — persistent CDP listener writing the console/network error feed.
+- `monitor.mjs`: persistent CDP listener writing the console/network error feed.
 - Runtime state lives in `~/.cache/claude-browser/` (`profile/`, logs, `events.jsonl`,
   `report.jsonl`, `shots/`).
 - Chrome runs headless by default; `BROWSER_HEADLESS= bash webtest.sh restart` runs headful.
@@ -82,7 +84,7 @@ bash "$WT" report                             # -> VERDICT: PASS / FAIL
 
 ## Notes
 
-- For web **search**, use a search API/tool — datacenter IPs hit CAPTCHAs on Google/DDG.
+- For web **search**, use a search API/tool, since datacenter IPs hit CAPTCHAs on Google/DDG.
   This skill is for testing *your* apps / specific URLs.
 - No secrets are stored in this repo; pass credentials at runtime via `login` flags.
 
