@@ -9,6 +9,10 @@ screenshots as evidence.
 It catches the bugs a quick visual check misses: a page that *renders* fine but throws in
 the console, fails a request, or whose client JS never loads.
 
+<p align="center">
+  <img src="docs/demo.png" alt="webtest run: asserts pass but a hidden JS error is caught — VERDICT FAIL" width="760">
+</p>
+
 ## Why it's different from "just open a browser"
 
 A persistent **monitor** stays attached to Chrome the whole session and records every
